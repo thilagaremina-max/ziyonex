@@ -1,0 +1,375 @@
+/* General Setup */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* Hero Section - Full Screen Impact */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(50%); /* டெக்ஸ்ட் தெளிவா தெரிய இமேஜை கொஞ்சம் இருட்டாக்கும் */
+}
+
+.hero-text {
+  padding: 0 10%;
+  color: white;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.hero-text button {
+  margin-top: 30px;
+  padding: 15px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px; /* Round Button */
+  background: #2563eb;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Services Section - The Professional Look */
+.services {
+  padding: 10px 0;
+  background: #fcfcfc;
+}
+
+.service-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* ஒவ்வொரு கிரிடுக்கும் இடையில் கேப் */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns in desktop */
+  gap: 30px;
+  align-items: start;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 5px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.service-row:hover {
+  background: #fff;
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.service-content {
+  flex: 1;
+  text-align: left;
+}
+
+.service-content h3 {
+  font-size: 32px;
+  color: #1e293b;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* தலைப்புக்கு கீழே ஒரு சின்ன ப்ளூ லைன் */
+.service-content h3::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #2563eb;
+  margin-top: 10px;
+}
+
+.service-content p {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.8;
+}
+.service-image {
+  flex: 1.2;
+  /* height-ஐ நீக்கிவிட்டு padding-top பயன்படுத்தினால் aspect ratio கரெக்டா இருக்கும் */
+  min-height: 200px;
+  max-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f0f4f8; /* இமேஜ் சின்னதா இருந்தா பின்னாடி ஒரு பேக்ரவுண்ட் தெரியும் */
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  /* இமேஜ் முகம் மட்டும் தெரியாம முழுசா தெரிய 'contain' மாத்திருக்கேன் */
+  object-fit: contain; 
+  /* ஒருவேளை இமேஜ் ஓரத்துல வெட்டுப்படாம இருக்க இதையும் சேர்க்கலாம் */
+  padding: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* Single column in mobile */
+    gap: 20px;
+  }
+  
+  .service-row {
+    flex-direction: row; /* Keep horizontal layout in mobile */
+    text-align: left;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .service-content {
+    flex: 1;
+  }
+  
+  .service-image {
+    flex: 1;
+    min-height: 120px;
+    max-height: 180px;
+  }
+  
+  .service-content h3::after { 
+    margin: 10px 0; 
+  }
+  
+  .hero-text h1 { 
+    font-size: 36px; 
+  }
+}
+/* Registration Section */
+/* Registration Card Wrapper */
+.rigstration {
+  max-width: 900px;
+  margin: 30px auto; /* மத்த செக்ஷனுக்கும் இதுக்கும் நல்ல கேப் இருக்கும் */
+  padding: 40px;
+  background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%); /* Deep Blue Gradient */
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ஒரு குட்டி டெக்கரேஷன் டிசைன் (Card-க்கு உள்ளே) */
+.rigstration::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.rigstration a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 28px; /* பெரிய எழுத்துக்கள் */
+  font-weight: 700;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+/* "Register Now" என்ற வார்த்தையை மட்டும் இன்னும் ஹைலைட் பண்ண */
+.rigstration a span {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fbbf24; /* Gold/Yellow color for 'Limited Slots' feeling */
+}
+
+.rigstration:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .rigstration {
+    margin: 10px 20px;
+    padding: 30px 20px;
+  }
+  .rigstration a {
+    font-size: 20px;
+  }
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Technologies - Pill Design (கார்டுக்கு பதில்) */
+.tech-flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.tech-item {
+  background: #ffffff;
+  padding: 12px 30px;
+  border-radius: 50px; /* Pill Shape */
+  font-weight: 600;
+  color: #2563eb;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  transition: 0.3s;
+}
+
+.tech-item:hover {
+  background: #2563eb;
+  color: #fff;
+  transform: translateY(-5px);
+  border-color: #2563eb;
+}
+
+/* Projects - Modern Minimalist Design */
+.projects {
+  padding: 10px 1%;
+  background: linear-gradient(135deg, #f8fafc 0%, #76a9dc 100%);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-feature {
+  background: transparent; /* கார்டு பார்டர் நீக்கப்பட்டது */
+  padding: 1px;
+  text-align: left;
+  border-left: 4px solid #e2e8f0; /* ஸ்டைலான சைடு லைன் */
+  transition: 0.3s;
+}
+
+.project-feature:hover {
+  border-left-color: #2563eb;
+  background: #ffffff;
+  border-radius: 0 15px 15px 0;
+  box-shadow: 15px 15px 40px rgba(0,0,0,0.05);
+}
+
+.project-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.project-feature h4 {
+  font-size: 22px;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+/* Why Choose Section - Creative Layout */
+.why-ziyonex {
+  padding: 10px 5%;
+  background: #ffffff;
+}
+
+.why-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: linear-gradient(to right, #f1f5f9, #ffffff);
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.benefit {
+  margin-bottom: 30px;
+}
+
+.benefit h5 {
+  font-size: 20px;
+  color: #2563eb;
+  margin-bottom: 5px;
+}
+
+.benefit p {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Call to Action - Canva Style Gradient */
+.cta {
+  background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 0;
+  margin-top: 50px;
+}
+
+.cta h2 { font-size: 40px; margin-bottom: 20px; }
+.cta button {
+  background: #fff;
+  color: #2563eb;
+  padding: 15px 45px;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}

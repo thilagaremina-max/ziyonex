@@ -1,0 +1,144 @@
+.webdev-container{
+    padding:60px 40px;
+    font-family:Arial, Helvetica, sans-serif;
+    }
+    
+    /* HERO SECTION */
+    
+    .webdev-hero{
+    text-align:center;
+    margin-bottom:60px;
+    }
+    
+    .webdev-hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+    color:#0f172a;
+    }
+    
+    .webdev-hero p{
+    font-size:18px;
+    color:#555;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+    }
+    
+    
+    /* SERVICES SECTION */
+    
+    .webdev-services{
+    text-align:center;
+    }
+    
+    .webdev-services h2{
+    font-size:32px;
+    margin-bottom:20px;
+    color:#0f172a;
+    }
+    
+    .webdev-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:30px;
+    margin-top:40px;
+    }
+    
+    .webdev-card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+    }
+    
+    .webdev-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .webdev-card h3{
+    margin-bottom:10px;
+    color:#0f172a;
+    }
+    
+    .webdev-card p{
+    color:#555;
+    font-size:15px;
+    line-height:1.5;
+    }
+    
+    
+    /* TECHNOLOGIES SECTION */
+    
+    .webdev-tech{
+    margin-top:70px;
+    text-align:center;
+    }
+    
+    .webdev-tech h2{
+    font-size:32px;
+    margin-bottom:20px;
+    }
+    
+    .tech-list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+    }
+    
+    .tech-list span{
+    background:#0f172a;
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    font-size:14px;
+    transition:0.3s;
+    }
+    
+    .tech-list span:hover{
+    background:#2563eb;
+    }
+    
+    
+    /* CTA SECTION */
+    
+    .webdev-cta{
+    margin-top:80px;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:50px;
+    border-radius:10px;
+    }
+    
+    .webdev-cta h2{
+    font-size:30px;
+    margin-bottom:10px;
+    }
+    
+    .webdev-cta p{
+    font-size:16px;
+    margin-bottom:20px;
+    }
+    
+    .webdev-cta button{
+    padding:12px 30px;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    }
+    
+    .webdev-cta button:hover{
+    background:#0284c7;
+    }
+
+    .webdev-card{
+        background:linear-gradient(135deg,#f8fafc,#e2e8f0);
+        }

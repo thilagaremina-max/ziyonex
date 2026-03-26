@@ -1,0 +1,94 @@
+/* மெயின் செக்ஷன் - மார்ஜின் குறைக்கப்பட்டுள்ளது */
+.contact-section {
+  max-width: 1100px;
+  margin: 50px auto; /* 80px-லிருந்து 40px ஆக குறைப்பு */
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* தலைப்பு - சைஸ் குறைப்பு */
+.contact-title {
+  text-align: center;
+  font-size: 30px; /* 42px-லிருந்து குறைப்பு */
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 25px; /* இடைவெளி குறைப்பு */
+}
+
+.contact-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: #2563eb;
+  margin: 8px auto 0;
+  border-radius: 10px;
+}
+
+/* கன்டென்ட் லே-அவுட் */
+.contact-content {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  background: #ffffff;
+  padding: 20px; /* பேடிங் பாதியாக குறைப்பு */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* காண்டாக்ட் டீடெயில்ஸ் பகுதி */
+.contact-details {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 12px; /* நெருக்கமான இடைவெளி */
+}
+
+.contact-row {
+  padding: 15px; /* பாக்ஸ் உள்ளே இடம் குறைப்பு */
+  border-radius: 15px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-row h4 {
+  color: #2563eb;
+  font-size: 14px; /* எழுத்து அளவு குறைப்பு */
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-row p, .contact-row a {
+  color: #475569;
+  font-size: 13.5px; /* சின்ன எழுத்துக்கள் */
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* மேப் பகுதி - உயரத்தைக் குறைத்தல் */
+.contact-map {
+  flex: 1.2;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 300px; /* 400px-லிருந்து 300px ஆக குறைப்பு */
+}
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+  .contact-section { margin: 20px auto; }
+  .contact-content {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+  .contact-map {
+    height: 200px; /* போனில் இன்னும் சிறிய மேப் */
+  }
+  .contact-details {
+    grid-template-columns: 1fr 1fr; /* போனில் 2 காலமே இருக்கட்டும், உயரம் குறையும் */
+  }
+}

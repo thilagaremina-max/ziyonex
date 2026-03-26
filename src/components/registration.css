@@ -1,0 +1,108 @@
+/* Container - உயரத்தை குறைத்து சுருக்கமான வடிவமைப்பு */
+.reg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px; /* ஓரங்களில் கேப் குறைவு */
+    background: #f1f5f9;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Form Card - சுருக்கப்பட்டது */
+  .reg-form {
+    background: #ffffff;
+    padding: 25px 35px; /* பேடிங் குறைக்கப்பட்டுள்ளது */
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* தலைப்பு மற்றும் விளக்கம் */
+  .reg-form h2 {
+    color: #1e293b;
+    font-size: 24px; /* சைஸ் குறைவு */
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .reg-form p {
+    color: #64748b;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  /* Grid Layout - 2 காலம்களாக பிரிப்பதன் மூலம் உயரம் குறையும் */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px; /* கேப் குறைவு */
+  }
+  
+  .input-group {
+    margin-bottom: 12px; /* வரிகளுக்கு இடையிலான இடைவெளி குறைவு */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .input-group label {
+    font-weight: 600;
+    color: #475569;
+    font-size: 13px;
+  }
+  
+  /* Inputs, Selects, and Textareas */
+  .input-group input, 
+  .input-group select, 
+  .input-group textarea {
+    padding: 10px 14px; /* பாக்ஸ் உயரம் குறைவு */
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e293b;
+    background: #f8fafc;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border-color: #2563eb;
+  }
+  
+  /* Textarea உயரத்தை மட்டும் குறைத்தல் */
+  .reg-form textarea {
+    height: 50px; /* அட்ரஸ் பாக்ஸ் உயரம் மிகக்குறைவு */
+    resize: none;
+  }
+  
+  /* Submit Button */
+  .reg-form button {
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+  }
+  
+  .reg-form button:hover {
+    background: #1d4ed8;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 500px) {
+    .form-grid {
+      grid-template-columns: 1fr; /* போனில் மட்டும் வரிசையாக வரும் */
+      gap: 0;
+    }
+    .reg-form {
+      padding: 20px;
+    }
+  }
