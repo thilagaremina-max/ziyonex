@@ -11,10 +11,11 @@ import BusinessApplication from './components/ourproducts/businessappliction';
 import Services from './components/services';
 import Contact from './components/contact';
 import Registration from './components/registrationform';
+
 function App() {
   return (
     <div className="App">
-    
+    <div className="container-fluid">
       <BrowserRouter>
       <Navbar />
         <Routes>
@@ -24,13 +25,13 @@ function App() {
          <Route path="/softwaresolution" element={<SoftwareSolution />}/>
          <Route path="/mlproducts" element={<MLProducts />}/>
          <Route path="/businessappliction" element={<BusinessApplication />}/>
-         <Route path="/services" element={<Services />}/>
+         <Route path="/services" element={<Services />}/>               hhygvgyuu
          <Route path="/contact" element={<Contact />}/>
          <Route path="/registration" element={<Registration />}/> 
-     
+            
         </Routes>
       </BrowserRouter>
-     
+      </div>
     </div>
   );
 }

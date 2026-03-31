@@ -10,6 +10,7 @@ function Registration() {
     education: "School Student",
     address: "",
     course: "Robotics",
+    referral: "",
     message: ""
   });
 
@@ -40,7 +41,7 @@ function Registration() {
       setFormData({ 
         name: "", email: "", phone: "", age: "", 
         education: "School Student", address: "", 
-        course: "Robotics", message: "" 
+        course: "Robotics", referral: "", message: "" 
       });
   
     } catch (error) {
@@ -107,6 +108,17 @@ function Registration() {
             </select>
           </div>
         </div>
+        <div><label>
+          who told you about us?</label>
+          <select name="referral" value={formData.referral} onChange={handleChange}>
+            <option value="Friend">Friend</option>
+            <option value="Social Media">Social Media</option>
+            <option value="TvAdd">Tv Advertisement</option>
+            <option value="WallPost">Wall Post</option>
+            <option value="BannerAdd">Banner Advertisement</option>
+            <option value="Other">Other</option>
+          </select>
+          </div>
 
         <div className="input-group">
           <label>Address</label>

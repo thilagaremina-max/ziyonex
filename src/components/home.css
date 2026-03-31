@@ -1,3 +1,8 @@
+/* Override Bootstrap container gutter with higher specificity */
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 0 !important;
+}
+
 /* General Setup */
 body {
   margin: 0;
@@ -14,6 +19,38 @@ body {
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+}
+
+/* Slider Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
 }
 
 .hero img {
@@ -74,8 +111,8 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns in desktop */
-  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr; /* Three columns in desktop */
+  gap: 20px;
   align-items: start;
 }
 
@@ -86,6 +123,8 @@ body {
   padding: 5px;
   border-radius: 20px;
   transition: 0.4s;
+  height: 100%; /* Ensure same height */
+  min-height: 200px; /* Set minimum height */
 }
 
 .service-row:hover {
@@ -123,15 +162,13 @@ body {
 }
 .service-image {
   flex: 1.2;
-  /* height-ஐ நீக்கிவிட்டு padding-top பயன்படுத்தினால் aspect ratio கரெக்டா இருக்கும் */
-  min-height: 200px;
-  max-height: 300px;
+  height: 200px; /* Fixed height for all images */
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   overflow: hidden;
-  background: #f0f4f8; /* இமேஜ் சின்னதா இருந்தா பின்னாடி ஒரு பேக்ரவுண்ட் தெரியும் */
+  /* இமேஜ் சின்னதா இருந்தா பின்னாடி ஒரு பேக்ரவுண்ட் தெரியும் */
 }
 
 .service-image img {
@@ -169,8 +206,7 @@ body {
   
   .service-image {
     flex: 1;
-    min-height: 120px;
-    max-height: 180px;
+    height: 200px; /* Consistent height in mobile */
   }
   
   .service-content h3::after { 
@@ -180,14 +216,29 @@ body {
   .hero-text h1 { 
     font-size: 36px; 
   }
+  
+  /* Mobile slider buttons */
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
 }
 /* Registration Section */
 /* Registration Card Wrapper */
 .rigstration {
   max-width: 900px;
-  margin: 30px auto; /* மத்த செக்ஷனுக்கும் இதுக்கும் நல்ல கேப் இருக்கும் */
-  padding: 40px;
-  background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%); /* Deep Blue Gradient */
+  margin: 15px auto; /* மத்த செக்ஷனுக்கும் இதுக்கும் நல்ல கேப் இருக்கும் */
+  padding: 15px;
+  background: linear-gradient(135deg, #1e293b 0%, #d73b3b 100%); /* Deep Blue Gradient */
   border-radius: 24px;
   box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
   display: flex;
@@ -215,7 +266,7 @@ body {
 .rigstration a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 28px; /* பெரிய எழுத்துக்கள் */
+  font-size: 20px; /* பெரிய எழுத்துக்கள் */
   font-weight: 700;
   line-height: 1.4;
   display: flex;
@@ -237,14 +288,98 @@ body {
   box-shadow: 0 25px 50px rgba(37, 99, 235, 0.4);
 }
 
+/* Footer Section */
+.footer {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.footer-section {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.footer-section h3 {
+  color: #2563eb;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #e2e8f0;
+}
+
+.address {
+  font-weight: 500;
+}
+
+.phone {
+  font-size: 14px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #2563eb;
+}
+
+.instagram-icon {
+  font-size: 18px;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 0;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8;
+  font-size: 14px;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
-  .rigstration {
-    margin: 10px 20px;
-    padding: 30px 20px;
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
-  .rigstration a {
-    font-size: 20px;
+  
+  .map-container iframe {
+    height: 150px;
   }
 }
 

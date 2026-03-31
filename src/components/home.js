@@ -22,13 +22,21 @@ function Home() {
     }, 3000); // 3 sec
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="home">
 
     <div className="hero">
       <img src={images[current]} alt="Ziyonex" />
+      
+      {/* Slider Controls */}
+      <button className="slider-btn prev-btn" onClick={() => setCurrent((prev) => (prev - 1 + images.length) % images.length)}>
+        ‹
+      </button>
+      <button className="slider-btn next-btn" onClick={() => setCurrent((prev) => (prev + 1) % images.length)}>
+        ›
+      </button>
 
       <div className="hero-text">
           <h1>Welcome to Ziyonex</h1>
@@ -56,7 +64,7 @@ function Home() {
         {/* Service 1: Web Development */}
         <div className="service-row">
           <div className="service-content">
-            <h4>Web Development</h4>
+            <h3>Web Development</h3>
             <p>Modern responsive websites using React and Node.</p>
           </div>
           <div className="service-image">
@@ -67,31 +75,31 @@ function Home() {
         {/* Service 2: AI / ML Projects */}
         <div className="service-row">
           <div className="service-content">
-            <h4>AI / ML Projects</h4>
+            <h3>AI / ML Projects</h3>
             <p>Machine learning applications and intelligent systems.</p>
           </div>
           <div className="service-image">
             <img src={hero5} alt="AI/ML" />
           </div>
         </div>
-    </div>
 
-    <div className="services-grid">
         {/* Service 3: IOT Solutions */}
         <div className="service-row">
           <div className="service-content">
-            <h4>IOT Solutions</h4>
+            <h3>IOT Solutions</h3>
             <p>Smart device integration and automation systems.</p>
           </div>
           <div className="service-image">
             <img src={hero6} alt="IOT" />
           </div>
         </div>
+    </div>
 
+    <div className="services-grid">
         {/* Service 4: Project Guidance */}
         <div className="service-row">
           <div className="service-content">
-            <h4>Project Guidance</h4>
+            <h3>Project Guidance</h3>
             <p>Professional support for final year IT projects.</p>
           </div>
           <div className="service-image">
@@ -194,6 +202,43 @@ function Home() {
         <button onClick={() => window.location.href = '/contact'}>Contact Us</button>
 
       </section>
+
+      {/* FOOTER SECTION */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>Contact Us</h3>
+            <p className="address">
+              Ziyonex Technologies<br />
+              New Bus Stand Opposite,Alangulam<br />
+              Tenkasi, Tamil Nadu 627851<br />
+              India
+            </p>
+            <p className="phone">
+              Phone: +91 6381121261, 8056569219<br />
+              Email: ziyonextech@gmail.com
+            </p>
+          </div>
+          
+          <div className="footer-section">
+            <h3>Follow Us</h3>
+            <div className="social-links">
+              <a href="https://www.instagram.com/ziyonextec" target="_blank" rel="noopener noreferrer" className="social-link">
+                <i className="instagram-icon">📷</i>
+                @ziyonex
+              </a>
+            </div>
+          </div>
+          
+          <div className="footer-section">
+           
+          </div>
+        </div>
+        
+        <div className="footer-bottom">
+          <p>&copy; 2026 Ziyonex Technologies. All rights reserved.</p>
+        </div>
+      </footer>
 
 
     </div>
