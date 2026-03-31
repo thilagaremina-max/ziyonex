@@ -2,7 +2,7 @@ import React from "react";
 import "./home.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import hero1 from "../components/images/1.jpg";
 import hero2 from "../components/images/2.jpg";
 import hero3 from "../components/images/3.jpg";
@@ -23,6 +23,8 @@ function Home() {
 
     return () => clearInterval(interval);
   }, [images.length]);
+
+  const navigate = useNavigate();
 
   return (
     <div className="home">
@@ -47,7 +49,7 @@ function Home() {
             applications, IoT systems, and professional project guidance.
           </p>
 
-          <button onClick={() => window.location.href = '/registration'}>Registration Now</button>
+          <button onClick={() => navigate('/registration')}>Registration Now</button>
         </div>
 
       </div>

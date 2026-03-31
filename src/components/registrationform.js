@@ -99,11 +99,13 @@ function Registration() {
             <label>Interested Course</label>
             <select name="course" value={formData.course} onChange={handleChange}>
               <option value="Robotics">Robotics Classes 🤖</option>
-              <option value="Web Development">Web Development 🌐</option>
+              <option value="Web Development">Web Development(Full stack) 🌐</option>
+              
               <option value="AI / ML Projects">AI / ML Projects 🧠</option>
               <option value="Python">Python</option>
               <option value="Java">Java</option>
               <option value="C / C++">C / C++</option>
+              <option value="Flutter">Pcb Board Designing</option>
               <option value="Game Development">Game Development 🎮</option>
             </select>
           </div>
@@ -116,6 +118,7 @@ function Registration() {
             <option value="TvAdd">Tv Advertisement</option>
             <option value="WallPost">Wall Post</option>
             <option value="BannerAdd">Banner Advertisement</option>
+            
             <option value="Other">Other</option>
           </select>
           </div>
