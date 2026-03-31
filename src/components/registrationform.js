@@ -10,7 +10,7 @@ function Registration() {
     education: "School Student",
     address: "",
     course: "Robotics",
-    referral: "",
+    referral:"Friend",
     message: ""
   });
 
@@ -21,7 +21,7 @@ function Registration() {
     setLoading(true);
   
     // நீங்கள் கொடுத்த புதிய Google Script URL இங்கே உள்ளது
-    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw1ps9mdatIPKLfkYXLvZZng3zIGixdQpkEmpa4c7Lt8KX5kzDJdySzUn5Pr75QqkjGfw/exec"; 
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxXRAzaS_UWjGoPWNVvROH15rrvzgmGCtChcAtC5b8e3h3BzHIO84uL6k4v9va2rsIQ/exec"; 
   
     try {
       await fetch(GOOGLE_SHEET_URL, {
@@ -41,7 +41,7 @@ function Registration() {
       setFormData({ 
         name: "", email: "", phone: "", age: "", 
         education: "School Student", address: "", 
-        course: "Robotics", referral: "", message: "" 
+        course: "Robotics", referral: "Friend", message: "" 
       });
   
     } catch (error) {
